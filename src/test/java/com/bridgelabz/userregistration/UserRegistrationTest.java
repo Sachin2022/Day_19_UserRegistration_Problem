@@ -42,4 +42,16 @@ public class UserRegistrationTest {
 		boolean result = userRegistration.email("sachin&kumar@gmail.com");
 		Assert.assertEquals(false, result);
 	}
+
+	@Test
+	public void givenPhoneNumber_WhenProper_ShouldReturnTrue() {
+		boolean result = userRegistration.phoneNumber("91 9604328902");
+		Assert.assertEquals(true, result);
+	}
+
+	@Test
+	public void givenPhoneNumber_WhenNotProper_ShouldReturnFlase() {
+		boolean result = userRegistration.phoneNumber("919604328902");
+		Assert.assertEquals(false, result);
+	}
 }
